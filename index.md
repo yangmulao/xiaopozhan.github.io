@@ -13,6 +13,9 @@ Syntax highlighted code block
 
 # 道阻且长 兴趣第一
 ## 板块设置
+
+https://yangmulao.github.io/xiaopozhan.github.com/
+
 ### Header 3
 #### Header 4
 ##### Header 5
