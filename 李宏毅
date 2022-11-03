@@ -1,0 +1,365 @@
+# Regression(回归)
+
+## 3.Optimization（优化）
+
+1. step 1：function with unknown
+2. step 2: define loss training data
+3. step 3: optimization
+
+y = 0.1k+0.97x1 achieves the smallest loss *L* = 0.48k on data  of 2017-2020 (training data)
+
+How about data of 2021 (unseen during training)?
+$$
+y = b+wx1
+y = b+wj xj
+$$
+feature（特征）
+
+**Linear models are too simple... we need more sophisticated modes.**
+
+也许显示并不是这样。可能会二次函数。（非线性关系）
+
+![image-20221011165832021](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111658127.png)
+
+Linear models have severe limitation. Model bias
+
+red curve = constant + sum of  a set of 
+
+![image-20221011165948846](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111659936.png)
+
+蓝色function 激活函数（sigmoid ReLU）
+
+***All Piecewise Linear Curves = constant + sum of a set of 曲折线​***
+
+Beyond Piecewise Linear?
+
+Approximate continuous curve by a piecewise linear curve.
+
+![image-20221011170415876](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111704994.png)
+
+How to represent this function?
+
+**![image-20221011170558312](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111705382.png)**
+
+## Sigmoid Function  (激活函数)
+
+Hard Sigmoid
+
+![image-20221011170728280](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111707318.png)
+
+Different w b c
+
+![image-20221011170904668](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111709878.png)
+
+red curve = sum of a set of curve + constant
+
+![image-20221011171036972](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111710096.png)
+
+![image-20221011171046983](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111710031.png)
+
+每一个式子代表不同的function。
+
+New Model: More Features
+
+y = b+wx1
+
+![image-20221011171337856](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111713958.png)
+
+![image-20221011171837978](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111718120.png)
+
+![image-20221011171906882](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111719991.png)
+
+![image-20221011172056773](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111720918.png)
+
+Function with unknown parameters
+
+![image-20221011172223828](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111722964.png)
+
+### Back to ML Framework
+
+![image-20221011172243483](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111722616.png)
+
+![image-20221011172314894](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111723944.png)
+
+## Loss:
+
+1. Loss is a function of parameters L
+2. Loss means how good a set of values is.
+
+![image-20221011172546086](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111725154.png)
+
+![image-20221011172636899](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111726977.png)
+
+Optimization of New MOdle
+
+![image-20221011172733363](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111727457.png)
+
+![image-20221011172840158](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111728265.png)
+
+Sigmoid - ReLU
+
+![image-20221011173459970](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111735082.png)
+
+![image-20221011173523500](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111735589.png)
+
+Activation function
+
+![image-20221011173553118](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111735236.png)
+
+Experimental Results
+
+![image-20221011173626434](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111736513.png)
+
+Back to ML Framework
+
+![image-20221011173711489](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111737618.png)
+
+![image-20221011173735820](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111737994.png)
+
+Experimental Results
+
+![image-20221011173912826](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111739962.png)
+
+3 Layers
+
+1. Red: real no. of views
+2. Blue: estimated no. of views
+
+![image-20221011173934369](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111739492.png)
+
+![image-20221011174058088](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111740230.png)
+
+Neural Network - This mimics human brains...(???)
+
+![image-20221011174153417](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111741596.png)
+
+Hidder layer
+
+![image-20221011174223302](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111742363.png)
+
+![image-20221011174306389](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111743571.png)
+
+过拟合
+
+![image-20221011174457617](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111744759.png)
+
+Let's predict no. of views today!
+
+- If we want to select a model for predictiong no. of viwes today, which one will you use?
+
+![](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111745058.png)
+
+
+
+![image-20221011174701276](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202210111747340.png)
+
+
+
+
+
+Park et al. created thin films based on oxygen-deficient tungsten oxide that can modulate the visible and infrared spectral ranges by balance the delicate composition of each constituent.
+
+
+
+When different bias voltages are applied to the multilayer DAST films, their refractive index change accordingly to achieve selective transmission of electromagnetic waves.
+
+In this work, we report and numerically investigate the novel multilayer film structure for electrochromic windows based on the electro-optic dielectric material of 4-dimethyl-amino-N-methyl-4-stilbazoliumtosylate (DAST) that they can modulate visible and IR light substantially and independently.
+
+Transparent poly-crystalline spinels protect and defend
+
+## P9 2021-Pytorch 教学 part 1
+
+![image-20221102154356605](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021543717.png)
+
+
+
+## P10 2021-Python教学 part 2 
+
+## P11 2022-作业HW1
+
+Objectives
+
+![image-20221102171044031](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021710085.png)
+
+Objectives
+
+- Solve a regression problem with deep neural networks (DNN)
+- Understand basic DNN training tips e.g. hyper-parameter tuning, feature selection, regularization, ...
+
+![image-20221102171135699](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021711767.png)
+
+### Task Description
+
+- Given survery results in the past 5 days in a specific state in u.S., then predict the percentage of new tested positive cases in the 5th day.
+
+  ### Data
+
+  - States (37, encoded to one-hot vectors)
+
+![image-20221102171409436](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021714516.png)
+
+![image-20221102171459727](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021714840.png)
+
+Data --One - hot Vector
+
+![image-20221102171533910](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021715024.png)
+
+#### Evaluation Metric
+
+Mean Squard Error (MSE) MSE 均方误差
+
+![image-20221102171705406](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021717504.png)
+
+## P12 2021- 作业HW1
+
+![image-20221102172126004](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021721058.png)
+
+## Outline
+
+1. Objectives
+2. Task Description
+3. Data
+4. Evaluation Metric
+5. Kaggle
+6. Grading
+7. Code Submission
+8. Deadlines
+9. Hints
+10. Regulations again
+11. Useful Links
+
+![image-20221102172248499](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021722555.png)
+
+![image-20221102172259518](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021722615.png)
+
+![image-20221102172323868](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021723965.png)
+
+Data -- Delphi's COVID-19 Surveys
+
+![image-20221102172357003](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021723109.png)
+
+![image-20221102172429918](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021724984.png)
+
+![image-20221102172526987](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021725049.png)
+
+
+
+![image-20221102172548132](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021725180.png)
+
+### RMSE
+
+![image-20221102172705772](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021727879.png)
+
+
+
+## P13 （选修） To Learn More - 深度学习简介
+
+#### Ups and downs of Deep Learning
+
+1. 1958: Perception (linear model) 感知机
+
+2. 1969：Perception has limitation感知机
+
+3. 1980s: Multi-layer perception
+
+   Do not have significant difference from DNN today
+
+   1986:Backprogation
+
+1. usually more than 3 hidden layers is not helpful
+
+1. 1989: 1 hidden layer is "good enough", why deep?
+
+1. 2006: RGM initialization (breakthrough)
+2. 2009: GPU
+3. 2011: Start to be popular in speech re
+
+![image-20221102172848764](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021728871.png)
+
+![image-20221102173533589](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021735649.png)
+
+- step 1: define a set of function
+- step 2: goodness of function
+- step 3: pick the best function
+
+Fully connect feedforward Network
+
+![image-20221102173649247](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021736316.png)
+
+![image-20221102173729461](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021737521.png)
+
+
+
+![image-20221102173927750](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021739817.png)
+
+![image-20221102174004395](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021740423.png)
+
+1. Input 
+2. Layer 1
+3. Layer 2
+4. ...
+5. Layer L
+6. Output
+
+***Deep = Many hidden layers***
+
+![image-20221102174632399](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021746482.png)
+
+![image-20221102174716046](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021747130.png)
+
+![image-20221102175100347](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211021751575.png)
+
+
+
+## P14 To Learn More - 反向传播
+
+## P15 选修 To Learn More - 预测神器宝贝
+
+## Regression 回归
+
+![image-20221103214851714](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032148888.png)
+
+Example Application of a Pokemon
+
+1. Estimating the Combat Power (CP) of a pokemon afhter evolution
+
+   ![image-20221103214950736](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032149859.png)
+
+1. Step 1: Model 
+2. Step 2: Goodness of Function
+3. Step 3: Best Function
+
+*y=b+w.xcp*
+
+![image-20221103215319556](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032153723.png)
+
+![image-20221103215635529](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032156597.png)
+
+*Loss function L:* f1 f2
+
+![image-20221103215906520](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032159596.png)
+
+![image-20221103220010648](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032200729.png)
+
+![image-20221103220109760](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032201844.png)
+
+### Step 3: Gradient Descent
+
+![image-20221103220219091](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032202148.png)
+
+![image-20221103220346657](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032203733.png)
+
+![image-20221103220507747](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032205842.png)
+
+![image-20221103220613041](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032206107.png)
+
+梯度，当前值的微分向量
+
+![image-20221103221141216](https://myxpz.oss-cn-beijing.aliyuncs.com/img/202211032211288.png)
+
+Selecting another Model
+
+Best Function
+
+
+
